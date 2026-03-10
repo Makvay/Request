@@ -1,9 +1,10 @@
 name: Windows C++ Release
 
 on:
-  create:
+  push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 jobs:
   release:
