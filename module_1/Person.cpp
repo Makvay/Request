@@ -1,4 +1,5 @@
 #include "Person.h"
+#include "pch.h"
 
 Person::Person(std::string n, int a, Gender g) : name{ n }, age{ a }, gender{g}
 {
