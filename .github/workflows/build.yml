@@ -1,0 +1,25 @@
+name: Windows C++ Build
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Visual Studio environment
+      uses: ilammy/msvc-dev-cmd@v1.4.1
+      with:
+        arch: x64
+
+    - name: Build Solution
+      run: msbuild example_unit.sln /p:Configuration=Debug /p:Platform=x64
